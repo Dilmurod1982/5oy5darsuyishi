@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 oy 5 dars uy ishi | Music player</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="title" id="title">Roxette - It Must Have Been Love</div>
+      <div class="img-container" id="img-container">
+        <img
+          class="cover"
+          id="cover"
+          src="./cover/Roxette - It Must Have Been Love.jpg"
+          alt=""
+        />
+      </div>
+      <div class="time" id="time">
+        <span class="start" id="start">00:00</span>
+        <span class="end" id="end">00:00</span>
+      </div>
+      <div class="progress-container" id="progress-container">
+        <div class="progress" id="progress"></div>
+      </div>
+      <form class="volume-form" id="volume-form">
+        <span style="cursor: pointer">
+          <i id="volume-icon" class="fas fa-volume-high"></i
+        ></span>
+        <input
+          class="styled-slider slyder-progress"
+          id="volume"
+          type="range"
+          min="0"
+          max="100"
+          step="1"
+          value="5"
+        />
+      </form>
+      <audio
+        class="audio"
+        id="audio"
+        src="./sounds/Roxette - It Must Have Been Love.mp3"
+      ></audio>
+      <div class="navigation" id="navigation">
+        <button class="btn prev" id="prev">
+          <i class="fa-solid fa-backward-step"></i>
+        </button>
+        <button class="btn btn-big play" id="play">
+          <i class="fa-sharp fa-solid fa-play"></i>
+        </button>
+        <button class="btn next" id="next">
+          <i class="fa-solid fa-forward-step"></i>
+        </button>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

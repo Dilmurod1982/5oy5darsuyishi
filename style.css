@@ -1,0 +1,127 @@
+@import url(https://fonts.googleapis.com/css2?family=Varela&display=swap);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Varela", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  background: url("./cover/cover.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  /* gap: 20px; */
+  padding: 50px;
+  border-radius: 14px;
+  box-shadow: 0 0 25px 10px #fff;
+  text-shadow: 2px 2px 5px #000;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.title {
+  height: 122px;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cover {
+  height: 350px;
+  width: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: rotation 8s linear infinite;
+  animation-play-state: paused;
+}
+.img-.container {
+  height: 550px;
+  width: 550px;
+  margin-top: -30px;
+}
+
+.time {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 2px #000;
+  margin-bottom: 0px;
+  user-select: none;
+}
+
+.progress-container {
+  width: 80%;
+  background-color: #fff;
+  height: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.progress {
+  width: 0;
+  background-color: #4d535a;
+  height: 8px;
+  border-radius: inherit;
+}
+
+.volume-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.volume-form span {
+  width: 22px;
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
+.navigation {
+  display: flex;
+  gap: 30px;
+}
+
+.btn {
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.btn-big {
+  font-size: 2.2rem;
+}
+
+.container.play .cover {
+  animation-play-state: running;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
