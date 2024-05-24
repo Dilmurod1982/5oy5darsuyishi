@@ -13,10 +13,13 @@ const container = document.getElementById("container");
 const title = document.getElementById("title");
 const progressContainer = document.getElementById("progress-container");
 const progress = document.getElementById("progress");
+const volume = document.getElementById("volume");
 
 let music = 0;
 
-btnPlay.addEventListener("click", () => {
+audio.volume = 0.5;
+
+btnPlay.addEventListener("click", (e) => {
   if (container.classList.contains("play")) {
     playFunc("play");
   } else {
@@ -43,10 +46,29 @@ progressContainer.addEventListener("click", function (e) {
   let width = this.clientWidth;
   audio.currentTime = (e.offsetX / width) * duration;
 });
+volume.addEventListener("input", changeVolume);
 
 function timeUpdate(e) {
   let currentTime = e.srcElement.currentTime;
   let duration = e.srcElement.duration;
+
+  let startMin = Math.trunc(currentTime / 60)
+    .toString()
+    .padStart(2, "0");
+  let startSec = Math.trunc(currentTime - startMin * 60)
+    .toString()
+    .padStart(2, "0");
+
+  let endMin = Math.trunc(duration / 60)
+    .toString()
+    .padStart(2, "0");
+  let endSec = Math.trunc(duration - endMin * 60)
+    .toString()
+    .padStart(2, "0");
+
+  document.getElementById("start").textContent = `${startMin}:${startSec}`;
+  document.getElementById("end").textContent = `${endMin}:${endSec}`;
+
   let timeResult = currentTime / (duration / 100);
   progress.style.width = `${timeResult}%`;
   if (audio.currentTime == audio.duration) {
@@ -80,4 +102,8 @@ function allTime() {
   if (timeResult == 100) {
     nextFunc();
   }
+}
+
+function changeVolume() {
+  audio.volume = volume.value / 100;
 }
